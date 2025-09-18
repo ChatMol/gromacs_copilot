@@ -589,7 +589,7 @@ class ProteinProtocol(BaseProtocol):
         # Create analysis directory if it doesn't exist
         mkdir_result = self.run_shell_command("mkdir -p analysis")
         
-        cmd = f"echo 'Protein' | {self.gmx_bins} gyrate -s md.tpr -f md.xtc -o analysis/gyrate.xvg"
+        cmd = f"echo 'Protein' | {self.gmx_bin} gyrate -s md.tpr -f md.xtc -o analysis/gyrate.xvg"
         result = self.run_shell_command(cmd)
         
         if not result["success"]:
